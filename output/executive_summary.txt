@@ -1,0 +1,41 @@
+EXECUTIVE SUMMARY - MULTISTATE SALES & USE TAX RECONCILIATION
+Periods covered: 2026-01 through 2026-06
+====================================================================
+
+Total estimated exposure: $2,181.11
+State-month periods flagged for review: 7
+
+KEY FINDINGS
+--------------------------------------------------------------------
+1. Undercollected tax of $331.11 across 20 wrong-rate and 10 zero-
+   tax transactions. The wrong-rate cluster traces to the processor
+   applying a state-only rate and dropping local/district taxes; the
+   zero-tax orders indicate a nexus configuration error. Largest
+   state impact: NY at $250.03.
+
+2. Duplicate postings overstated gross collected tax by $217.35 (14
+   re-posted transactions). Filings prepared off the raw processor
+   report would overstate liability; the dedup step removes them.
+
+3. Remittance gap of $1,850.00: tax collected from customers but not
+   yet filed/paid for at least one state-period. Collected-but-
+   unremitted tax is a trust-fund liability and should be trued up
+   in the next filing cycle.
+
+4. Marketplace-facilitator sales (59 transactions) were correctly
+   excluded from company liability; the facilitator remits tax on
+   those orders.
+
+RECOMMENDED ACTIONS
+--------------------------------------------------------------------
+1. Correct the processor's rate table for the affected state and
+   backfile amended returns for the undercollected periods.
+2. Fix the nexus configuration causing zero-tax checkouts and add a
+   monthly zero-tax exception report as a preventive control.
+3. Add this dedup check to the close checklist so filings are always
+   prepared from deduplicated data.
+4. Remit the outstanding collected-not-remitted balance with the
+   next filing and reconcile remittances to collections monthly.
+
+Prepared automatically by tax_reconciler.py; transaction-level
+support is in tax_reconciliation_report.xlsx (Exception Detail tab).
